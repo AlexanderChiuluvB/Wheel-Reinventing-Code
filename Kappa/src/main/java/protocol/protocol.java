@@ -1,3 +1,5 @@
+package protocol;
+
 import com.damon.RpcRequest;
 
 import java.net.URL;

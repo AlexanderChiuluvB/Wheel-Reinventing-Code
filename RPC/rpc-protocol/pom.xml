@@ -30,6 +30,11 @@
             <version>[9.0.17,)</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>9.0.31</version>
+        </dependency>
+        <dependency>
             <groupId>com.damon</groupId>
             <artifactId>rpc-framework</artifactId>
             <version>1.0-SNAPSHOT</version>

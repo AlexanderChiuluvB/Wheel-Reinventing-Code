@@ -1,4 +1,4 @@
-package protocol.http;
+package protocol.socket;
 
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,7 +17,8 @@ public class SocketServer {
         if (INSTANCE == null) {
             synchronized (SocketServer.class) {
                 if (INSTANCE == null) {
-                    return new SocketServer();
+                    INSTANCE = new SocketServer();
+                    return INSTANCE;
                 }
             }
         }

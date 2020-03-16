@@ -1,4 +1,4 @@
-package protocol.http;
+package protocol.socket;
 
 import com.damon.RpcRequest;
 
@@ -22,7 +22,8 @@ public class SocketClient {
         if (INSTANCE == null) {
             synchronized (SocketClient.class) {
                 if (INSTANCE == null) {
-                    return new SocketClient();
+                    INSTANCE = new SocketClient();
+                    return INSTANCE;
                 }
             }
         }
