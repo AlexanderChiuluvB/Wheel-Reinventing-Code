@@ -1,17 +1,16 @@
-### 造轮子
+### 造轮子的代码
 
-手写轮子吧！
+#### RPC
 
-#### 计划1
+正在施工中,Netty太难了
 
-手写Kappa架构
+参考 https://gitbook.cn/books/5d18c490ba5e347f1f839844/index.html
 
-#### 计划2
+从头写一个RPC框架(网络协议分别基于socket,http和Netty)
 
-流计算框架的轮子
+#### Kappa
 
-#### 计划3
+Kafka+Flink1.10+Mysql 模拟一个简单的流批处理统一的Kappa 架构
 
-手写rpc的轮子
+Flink1.10 merge了 Blink planner, 把流批处理统一到同一逻辑代码.
 
-This repo contains code of <<实时流计算系统设计与实现>> 
