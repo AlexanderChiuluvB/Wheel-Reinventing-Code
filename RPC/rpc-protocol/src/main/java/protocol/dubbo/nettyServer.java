@@ -69,11 +69,15 @@ public class nettyServer {
                                 ChannelPipeline channelPipeline = socketChannel.pipeline();
                                 channelPipeline.addLast(new NettyDecoderHandler(serializeType, RpcRequest.class));
                                 channelPipeline.addLast(new NettyEncoderHandler(serializeType));
-                                channelPipeline.addLast("handler", new Ne)
-
-
+                                channelPipeline.addLast("handler", new NettyServerHandler());
                         }
                     });
+            Channel channel = bootstrap.bind(host, port)
+                    .sync()
+                    .channel();
+        } catch (Exception e){
+            bossGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
         }
 
 

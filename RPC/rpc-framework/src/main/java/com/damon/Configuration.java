@@ -1,5 +1,7 @@
 package com.damon;
 
+import java.util.List;
+
 public class Configuration {
 
     private String procotol;
