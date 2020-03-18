@@ -1,12 +1,13 @@
 package protocol.http;
 
+import jakarta.servlet.Servlet;
 import org.apache.catalina.*;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.core.StandardEngine;
 import org.apache.catalina.core.StandardHost;
 import org.apache.catalina.startup.Tomcat;
-import sun.rmi.server.Dispatcher;
+
 
 public class httpServer {
 
@@ -54,7 +55,7 @@ public class httpServer {
         service.setContainer(engine);
         service.addConnector(connector);
 
-        tomcat.addServlet(contextPath, "dispatcher", new DispatcherServelet());
+        tomcat.addServlet(contextPath, "dispatcher", (Servlet) new DispatcherServelet());
         context.addServletMappingDecoded("/*", "dispatcher");
 
         try {

@@ -1,8 +1,8 @@
 package protocol.socket;
 
 import com.damon.RpcRequest;
+import com.damon.URL;
 
-import java.net.URL;
 
 public class SocketProtocol {
 

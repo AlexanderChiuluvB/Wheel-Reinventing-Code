@@ -2,8 +2,8 @@ package protocol;
 
 
 import com.damon.RpcRequest;
+import com.damon.URL;
 
-import java.net.URL;
 
 public interface Procotol {
 
