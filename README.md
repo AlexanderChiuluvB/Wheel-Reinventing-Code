@@ -1,8 +1,8 @@
-### 造轮子的代码
+### 造轮子的代码仓库
 
 #### RPC
 
-正在施工中,Netty-Example这个module包含了<<Netty In Action>>的代码和笔记
+正在施工中,Netty-Example这个module包含了<Netty In Action>的代码和笔记
 
 参考 https://gitbook.cn/books/5d18c490ba5e347f1f839844/index.html
 
