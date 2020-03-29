@@ -13,7 +13,7 @@ import java.net.InetSocketAddress;
 public class EchoServer {
     private final int port;
 
-    public EchoServer(int port) {
+    private EchoServer(int port) {
         this.port = port;
     }
 
@@ -26,7 +26,7 @@ public class EchoServer {
         new EchoServer(port).start();
     }
 
-    public void start() throws Exception {
+    private void start() throws Exception {
         final EchoServerHandler echoServerHandler = new EchoServerHandler();
         EventLoopGroup group = new NioEventLoopGroup();
         try {
@@ -47,8 +47,5 @@ public class EchoServer {
         } finally {
             group.shutdownGracefully();
         }
-
-
     }
-
 }

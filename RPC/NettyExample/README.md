@@ -44,7 +44,7 @@ events from client to server(written)
 
 * Channel--Sockets
 
-Channel表示一个链接,可以理解为每一个请求就是一个Channel
+Channel表示一个链接,可以理解为每一个请求就是一个Channel,并且Channel的实现是线程安全的
 
 * EventLoop--Control flow,multithreading,concurrency
 
@@ -62,6 +62,11 @@ Channel表示一个链接,可以理解为每一个请求就是一个Channel
  Thread , virtually eliminates the need for synchronization."
 
 一个Channel的IO操作是由单个线程负责的,省去了同步操作的开销
+
+* selector
+
+
+
 
 * ChannelFuture--Asynchronous notification
 
@@ -122,9 +127,24 @@ Inbound: server->client use decoders
 
 1.Bind to a port.
 
-2.Require two EventLoopGroup
+2.Require two EventLoopGroup,Why?
 
 ![1585276830230](RPC/NettyExample/1585276830230.png)
 
+A server needs two distinct set of Channels.
+
+The first set will contain a single ServerChannel representing the 
+
+server's own listening socket, binding to a local port.
+
+The second set will contain all of the Channels that have been created
+
+to handle incoming client connections.
+
+In summary, the first EventLoopGroup binds to the ServerChannel.
+
+the second EventLoopGroup is used to handle the channels with incoming 
+
+connections.
 
 
