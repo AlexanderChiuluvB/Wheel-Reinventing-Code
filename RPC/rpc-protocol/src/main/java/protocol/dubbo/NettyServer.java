@@ -25,22 +25,22 @@ import serializer.SerializeType;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class nettyServer {
+public class NettyServer {
 
-    private static volatile nettyServer INSTANCE = null;
+    private static volatile NettyServer INSTANCE = null;
 
     private static ExecutorService executorService = Executors.newCachedThreadPool();
 
     private SerializeType serializeType = SerializeType.queryByType(Configuration.getInstance().getSerialize());
 
-    private nettyServer() {
+    private NettyServer() {
     }
 
-    public static nettyServer getInstance() {
+    public static NettyServer getInstance() {
         if (INSTANCE == null) {
-            synchronized (nettyServer.class) {
+            synchronized (NettyServer.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new nettyServer();
+                    INSTANCE = new NettyServer();
                     return INSTANCE;
                 }
             }
