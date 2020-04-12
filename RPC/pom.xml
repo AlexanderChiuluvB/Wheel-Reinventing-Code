@@ -13,7 +13,7 @@
         <module>rpc-framework</module>
         <module>rpc-register</module>
         <module>NettyExample</module>
-        <module>WebSocket</module>
+        <module>rpc-spring</module>
     </modules>
     <dependencies>
         <dependency>

@@ -2,9 +2,10 @@ package protocol.socket;
 
 import com.damon.RpcRequest;
 import com.damon.URL;
+import protocol.Protocol;
 
 
-public class SocketProtocol {
+public class SocketProtocol implements Protocol {
 
     public void start(URL url) {
         SocketServer socketServer = SocketServer.getInstance();

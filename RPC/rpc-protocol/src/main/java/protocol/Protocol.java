@@ -5,7 +5,7 @@ import com.damon.RpcRequest;
 import com.damon.URL;
 
 
-public interface Procotol {
+public interface Protocol {
 
     void start(URL url);
     Object send(URL url, RpcRequest invocation);

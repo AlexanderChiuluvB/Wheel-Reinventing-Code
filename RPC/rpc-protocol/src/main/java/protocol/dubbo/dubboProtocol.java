@@ -5,14 +5,14 @@ import com.damon.RpcRequest;
 import com.damon.URL;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
-import protocol.Procotol;
+import protocol.Protocol;
 import protocol.dubbo.channelPool.NettyChannelPoolFactory;
 import protocol.dubbo.channelPool.ResponseHolder;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-public class dubboProtocol implements Procotol {
+public class dubboProtocol implements Protocol {
 
     @Override
     public void start(URL url) {
