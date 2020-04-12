@@ -1,6 +1,7 @@
 package com.damon;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class RpcRequest implements Serializable {
     private String requestId;
@@ -11,8 +12,8 @@ public class RpcRequest implements Serializable {
     private String impl;
     private int timeout;
 
-    public RpcRequest(String requestId, String interfaceName,
-                      String methodName, Object[] params, Class[] paramTypes,String impl,int timeout) {
+    public RpcRequest(UUID requestId, String interfaceName,
+                      String methodName, Object[] params, Class[] paramTypes, String impl, int timeout) {
         super();
         this.requestId = requestId;
         this.interfaceName = interfaceName;

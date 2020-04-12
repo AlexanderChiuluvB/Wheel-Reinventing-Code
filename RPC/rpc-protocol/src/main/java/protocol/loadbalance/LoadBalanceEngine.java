@@ -1,8 +1,8 @@
-package loadbalance;
+package protocol.loadbalance;
 
-import loadbalance.impl.HashLoadStrategy;
-import loadbalance.impl.PollingLoadStrategy;
-import loadbalance.impl.RandomLoadStrategy;
+import protocol.loadbalance.impl.HashLoadStrategy;
+import protocol.loadbalance.impl.PollingLoadStrategy;
+import protocol.loadbalance.impl.RandomLoadStrategy;
 
 import java.util.HashMap;
 import java.util.Map;

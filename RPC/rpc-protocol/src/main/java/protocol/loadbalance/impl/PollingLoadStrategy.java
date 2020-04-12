@@ -1,7 +1,7 @@
-package loadbalance.impl;
+package protocol.loadbalance.impl;
 
 import com.damon.ServiceProvider;
-import loadbalance.LoadStrategy;
+import protocol.loadbalance.LoadStrategy;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
