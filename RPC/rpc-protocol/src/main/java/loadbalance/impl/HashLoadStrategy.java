@@ -1,7 +1,7 @@
-package protocol.loadbalance.impl;
+package loadbalance.impl;
 
 import com.damon.ServiceProvider;
-import protocol.loadbalance.LoadStrategy;
+import loadbalance.LoadStrategy;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

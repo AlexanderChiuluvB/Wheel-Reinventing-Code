@@ -15,7 +15,7 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<RpcRequest> 
         System.out.println(channelHandlerContext.channel().remoteAddress() + "->server:" + rpcRequest.toString());
         //服务端调用反射得来的函数并且返回
         InvokeTask task = new InvokeTask(rpcRequest, channelHandlerContext);
-        nettyServer.submit(task);
+        NettyServer.submit(task);
     }
 
     @Override

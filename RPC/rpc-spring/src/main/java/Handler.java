@@ -2,9 +2,8 @@ import com.damon.Configuration;
 import com.damon.RpcRequest;
 import com.damon.ServiceProvider;
 import com.damon.URL;
-import protocol.loadbalance.LoadBalanceEngine;
-import protocol.loadbalance.LoadBalanceStrategy;
-import protocol.loadbalance.LoadStrategy;
+import loadbalance.LoadBalanceEngine;
+import loadbalance.LoadStrategy;
 import protocol.Protocol;
 import protocol.dubbo.dubboProtocol;
 import protocol.http.httpProtocol;
@@ -53,14 +52,11 @@ public class Handler<T> implements InvocationHandler {
         URL url = new URL(serviceProvider.getIp(), serviceProvider.getPort());
         String impl = serviceProvider.getServiceObject().toString();
         int timeout = 2000;
-        RpcRequest invocation = new RpcRequest(UUID.randomUUID(),
+        RpcRequest invocation = new RpcRequest(UUID.randomUUID().toString(),
                 interfaceClass.getName(),
                 method.getName(),
                 args,
                 method.getParameterTypes(), impl, timeout);
         return protocol.send(url, invocation);
-
     }
-
-
 }

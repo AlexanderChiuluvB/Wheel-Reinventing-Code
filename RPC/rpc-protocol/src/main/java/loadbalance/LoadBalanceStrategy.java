@@ -1,4 +1,4 @@
-package protocol.loadbalance;
+package loadbalance;
 
 public enum LoadBalanceStrategy {
 

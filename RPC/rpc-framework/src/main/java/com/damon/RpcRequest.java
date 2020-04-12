@@ -12,7 +12,7 @@ public class RpcRequest implements Serializable {
     private String impl;
     private int timeout;
 
-    public RpcRequest(UUID requestId, String interfaceName,
+    public RpcRequest(String requestId, String interfaceName,
                       String methodName, Object[] params, Class[] paramTypes, String impl, int timeout) {
         super();
         this.requestId = requestId;

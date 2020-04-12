@@ -1,7 +1,7 @@
-package protocol.loadbalance.impl;
+package loadbalance.impl;
 
 import com.damon.ServiceProvider;
-import protocol.loadbalance.LoadStrategy;
+import loadbalance.LoadStrategy;
 
 import java.util.List;
 import java.util.Random;
