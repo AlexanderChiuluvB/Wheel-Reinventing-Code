@@ -1,5 +1,10 @@
 import com.damon.Configuration;
+import com.damon.RpcRequest;
 import com.damon.ServiceProvider;
+import com.damon.URL;
+import protocol.loadbalance.LoadBalanceEngine;
+import protocol.loadbalance.LoadBalanceStrategy;
+import protocol.loadbalance.LoadStrategy;
 import protocol.Protocol;
 import protocol.dubbo.dubboProtocol;
 import protocol.http.httpProtocol;
@@ -8,6 +13,7 @@ import protocol.socket.SocketProtocol;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.UUID;
 
 public class Handler<T> implements InvocationHandler {
 
@@ -42,7 +48,17 @@ public class Handler<T> implements InvocationHandler {
         if (strategy == null || strategy.equalsIgnoreCase("")) {
             strategy = "random";
         }
-
+        LoadStrategy loadStrategyService = LoadBalanceEngine.queryLoadStrategy(strategy);
+        ServiceProvider serviceProvider = loadStrategyService.select(providerList);
+        URL url = new URL(serviceProvider.getIp(), serviceProvider.getPort());
+        String impl = serviceProvider.getServiceObject().toString();
+        int timeout = 2000;
+        RpcRequest invocation = new RpcRequest(UUID.randomUUID(),
+                interfaceClass.getName(),
+                method.getName(),
+                args,
+                method.getParameterTypes(), impl, timeout);
+        return protocol.send(url, invocation);
 
     }
 
